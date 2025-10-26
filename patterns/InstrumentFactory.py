@@ -1,4 +1,5 @@
 
+from models import Stock,Bond,ETF
 
 class InstrumentFactory:
     def create_instrument(data:dict):
@@ -19,57 +20,3 @@ class InstrumentFactory:
         else:
             raise ValueError('Unknown Instrument')
         
-
-class Stock:
-    def __init__(self,symbol,typeS,price,sector,issuer):
-        self.symbol = symbol
-        self.type = typeS
-        self.price = price
-        self.sector = sector
-        self.issuer = issuer
-
-    def get_metrics(self):
-        return {
-            "symbol": self.symbol,
-            "type": self.type,
-            "price": self.price,
-            "sector": self.sector,
-            "issuer": self.issuer
-        }
-
-class ETF:
-    def __init__(self,symbol,typeS,price,sector,issuer):
-        self.symbol = symbol
-        self.type = typeS
-        self.price = price
-        self.sector = sector
-        self.issuer = issuer
-
-    def get_metrics(self):
-        return {
-            "symbol": self.symbol,
-            "type": self.type,
-            "price": self.price,
-            "sector": self.sector,
-            "issuer": self.issuer
-        }
-
-class Bond:
-    def __init__(self,symbol,typeS,price,sector,issuer, maturity):
-        self.symbol = symbol
-        self.type = typeS
-        self.price = price
-        self.sector = sector
-        self.issuer = issuer
-        self.maturity = maturity
-    
-    def get_metrics(self):
-        return {
-            "symbol": self.symbol,
-            "type": self.type,
-            "price": self.price,
-            "sector": self.sector,
-            "issuer": self.issuer,
-            "maturity":self.maturity
-        }
-

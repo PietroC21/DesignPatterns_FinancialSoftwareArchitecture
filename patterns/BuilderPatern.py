@@ -1,19 +1,8 @@
 from typing import List, Dict, Optional
+from models import Position, Portfolio
 import json
 
-class Position:
-    def __init__(self,symbol,qty,price):
-        self.symbol = symbol
-        self.quantity = qty
-        self.price = price
 
-class Portfolio:
-    def __init__(self,name,owner):
-        self.name = name
-        self.owner = owner
-        self.positions:List[Position] = []
-        self.sub_portfolios: List['Portfolio'] = []
-        
 class PortfolioBuilder:
     def __init__(self, name):
         self._name = name
